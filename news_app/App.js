@@ -29,7 +29,7 @@ export default function App() {
           )}
           keyExtractor={(item) => item.u_id.toString()}
           data={news_data}
-          renderItem={({ item }) => <Text>{item.title}</Text>}
+          renderItem={({ item }) => <Text>deneme</Text>}
         />
       </View>
     </SafeAreaView>
