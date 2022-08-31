@@ -14,10 +14,12 @@ const NewsCard = (props) => {
 };
 
 const styles = StyleSheet.create({
-  container: { padding: 10, marginTop: 10 },
+  container: { backgroundColor: "white", margin: 10, borderRadius: 10 },
   Image: {
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height / 3,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
   },
   newsTitle: {
     fontWeight: "bold",
