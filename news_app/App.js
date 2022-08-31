@@ -1,38 +1,20 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  FlatList,
-  Image,
-  ScrollView,
-  Dimensions,
-} from "react-native";
+import { StyleSheet, Text, View, FlatList, Dimensions } from "react-native";
 import news_data from "./assets/new_data.json";
-// import news_banner_data from "./assets/news_banner_data.json";
 import NewsBanner from "./components/newsBanner";
+import NewsCard from "./components/newsCard";
 
 export default function App() {
   console.log(news_data);
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <Text style={styles.headText}>News App</Text>
-        <FlatList
-          ListHeaderComponent={() => (
-            // <ScrollView horizontal>
-            //   {news_banner_data.map((item) => (
-            //     <Image style={styles.Image} source={{ uri: item.imageUrl }} />
-            //   ))}
-            // </ScrollView>
-            <NewsBanner />
-          )}
-          keyExtractor={(item) => item.u_id.toString()}
-          data={news_data}
-          renderItem={({ item }) => <Text>deneme</Text>}
-        />
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <Text style={styles.headText}>News App</Text>
+      <FlatList
+        ListHeaderComponent={() => <NewsBanner />}
+        keyExtractor={(item) => item.u_id.toString()}
+        data={news_data}
+        renderItem={(news_data) => <NewsCard data={news_data} />}
+      />
+    </View>
   );
 }
 
